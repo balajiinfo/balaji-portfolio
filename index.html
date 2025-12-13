@@ -1,202 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Balaji Balaraman | DevOps / DevSecOps Engineer</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
 
-  <!-- DARK MODE TOGGLE -->
-  <div class="theme-toggle">
-    <label>
-      <input type="checkbox" id="darkToggle" />
-      🌙 Dark Mode
-    </label>
+  <!-- SEO -->
+  <meta name="description" content="Balaji Balaraman – DevOps / DevSecOps Engineer with 2.6 years experience in Azure, AWS, CI/CD, Kubernetes, Terraform, and Cloud Security."/>
+  <meta name="keywords" content="DevOps Engineer, DevSecOps, Azure, AWS, Kubernetes, Jenkins, Terraform, CI/CD, Cloud Security"/>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="dark">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-brand">BALAJI BALARAMAN</div>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#career">Career</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <button id="themeToggle" class="theme-btn">🌙</button>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <img src="/public/profile.jpg" alt="Balaji Balaraman" class="profile-pic"/>
+
+  <h1>Balaji Balaraman</h1>
+  <h3>DevOps / DevSecOps Engineer</h3>
+
+  <p class="hero-sub">
+    Azure • AWS • CI/CD • Kubernetes • Terraform • Cloud Security • Observability
+  </p>
+
+  <p class="hero-desc">
+    Results-driven DevOps / DevSecOps Engineer with 2.6 years of hands-on experience
+    designing, automating, and securing cloud-native platforms across Azure and AWS.
+    Strong focus on reliability, scalability, compliance, and production stability.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#contact" class="btn primary">Contact Me</a>
+    <button id="openResume" class="btn secondary">View Resume</button>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I currently work at <strong>Zuci Systems India Pvt. Ltd.</strong> as a DevOps /
+    DevSecOps Engineer, supporting enterprise, fintech, and AI-based platforms.
+    My responsibilities include CI/CD automation, container orchestration,
+    infrastructure as code, cloud security remediation, and production observability.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Core Technical Skills</h2>
+
+  <div class="skill-card">
+    <h4>CI/CD & DevOps</h4>
+    <p>Jenkins (multibranch & multi-server), GitHub Actions, Azure DevOps, Nexus, Git, Bitbucket</p>
   </div>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-card">
-      <img src="/public/profile.jpg" alt="Balaji Balaraman" class="profile-pic" />
-      <h1>Balaji Balaraman</h1>
-      <h3>DevOps / DevSecOps Engineer</h3>
-      <p class="tagline">
-        Azure • AWS • CI/CD • Kubernetes • Cloud Security • Observability
-      </p>
-
-      <p class="summary">
-        Results-driven DevOps / DevSecOps Engineer with 2.6 years of experience
-        designing, automating, and managing cloud-native deployments across
-        Azure and AWS. Strong focus on reliability, scalability, security
-        compliance, and production observability.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#contact" class="btn primary">Contact Me</a>
-        <a href="Balaji_Balaraman_Resume.pdf" download class="btn secondary">
-          Download Resume
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- ABOUT -->
-  <section>
-    <h2>About Me</h2>
+  <div class="skill-card">
+    <h4>Cloud Platforms</h4>
     <p>
-      I am a DevOps / DevSecOps Engineer specializing in CI/CD automation,
-      infrastructure as code, container orchestration, and cloud security.
-      I have hands-on experience supporting enterprise, financial, and AI-based
-      platforms, ensuring secure and stable production releases.
+      <strong>Azure:</strong> AKS, Azure Container Apps, ACR, Key Vault,
+      PostgreSQL Flexible Server, Data Factory, Event Grid, Front Door, Application Insights<br/>
+      <strong>AWS:</strong> EC2, Lambda, EventBridge, SNS, API Gateway,
+      ELB, NLB, IAM, S3, CloudWatch
     </p>
-  </section>
+  </div>
 
-  <!-- CORE SKILLS -->
-  <section>
-    <h2>Core Skills</h2>
+  <div class="skill-card">
+    <h4>Containers & Infrastructure as Code</h4>
+    <p>Docker, Kubernetes (AKS & EKS), Docker Swarm, Docker Compose, Podman, Terraform (Intermediate)</p>
+  </div>
 
-    <div class="skills-block">
-      <h4>CI/CD & DevOps</h4>
-      <p>
-        Jenkins, GitHub Actions, GitHub Runner, Azure DevOps, Nexus,
-        SonarQube, Git, Multi-environment pipelines
-      </p>
-    </div>
-
-    <div class="skills-block">
-      <h4>Cloud Platforms</h4>
-      <p>
-        Azure (AKS, Azure Container Apps, ACR, Key Vault, PostgreSQL Flexible Server,
-        Data Factory, Event Grid, Front Door),
-        AWS (EC2, Lambda, EventBridge, SNS, API Gateway, ELB, NLB, IAM, S3)
-      </p>
-    </div>
-
-    <div class="skills-block">
-      <h4>Containers & Orchestration</h4>
-      <p>
-        Docker, Kubernetes (AKS), Docker Swarm, Docker Compose,
-        GPU-based deployments
-      </p>
-    </div>
-
-    <div class="skills-block">
-      <h4>Monitoring & Logging</h4>
-      <p>
-        ELK Stack, Filebeat, Metricbeat, Heartbeat,
-        Prometheus, Grafana, Loki, Azure Application Insights
-      </p>
-    </div>
-
-    <div class="skills-block">
-      <h4>Security & DevSecOps</h4>
-      <p>
-        Vulnerability Management, OS Patching, Configuration Hardening,
-        Compliance Validation, Least-Privilege Access
-      </p>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE TIMELINE -->
-  <section>
-    <h2>Professional Experience</h2>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <span class="time">Aug 2023 – Present</span>
-        <h4>DevOps / DevSecOps Engineer — Zuci Systems India Pvt. Ltd.</h4>
-        <ul>
-          <li>Designed and maintained CI/CD pipelines using Jenkins and GitHub Actions.</li>
-          <li>Automated infrastructure provisioning using Terraform across Azure and AWS.</li>
-          <li>Managed containerized microservices across Kubernetes, Docker Swarm, and IaaS.</li>
-          <li>Led DevSecOps remediation including OS patching, vulnerability fixes, and validation.</li>
-          <li>Implemented centralized monitoring and logging for production systems.</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <span class="time">Dec 2022 – Jul 2023</span>
-        <h4>Intern — Java & Cloud</h4>
-        <ul>
-          <li>Trained in Java fundamentals, Linux administration, and cloud basics.</li>
-          <li>Assisted with CI/CD tasks, deployments, and environment setup.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECT EXPERIENCE -->
-  <section>
-    <h2>Client Project Experience</h2>
-
-    <div class="project">
-      <h4>Northern Arc – Financial Services Platform (Azure)</h4>
-      <ul>
-        <li>Implemented Jenkins multi-server CI/CD pipelines for microservice deployments.</li>
-        <li>Managed Docker and Docker Swarm–based microservices.</li>
-        <li>Configured Azure VNet, Nginx reverse proxy, and secure networking.</li>
-        <li>Implemented ELK Stack with Filebeat, Metricbeat, and Heartbeat for health monitoring.</li>
-        <li>Supported fintech client applications including Paytm, MoneyView, and loan disbursement systems.</li>
-        <li>Performed Azure VM security hardening and vulnerability remediation.</li>
-      </ul>
-    </div>
-
-    <div class="project">
-      <h4>Borderless Access – Agentic AI Platform (Azure)</h4>
-      <ul>
-        <li>Implemented and coordinated Azure services including AKS, Azure Container Apps, ACR, and Key Vault.</li>
-        <li>Configured GPU-enabled AKS node pools for AI/ML workloads.</li>
-        <li>Designed secure networking using VPN integration, private subnets, Azure Front Door, and Ingress.</li>
-        <li>Integrated PostgreSQL Flexible Server, Data Factory, Event Grid, and AI Foundry.</li>
-        <li>Implemented Loki logging with sidecar containers and Prometheus + Grafana monitoring.</li>
-      </ul>
-    </div>
-
-    <div class="project">
-      <h4>Mariner Finance – Enterprise Financial Application (AWS)</h4>
-      <ul>
-        <li>Managed EC2-based Docker microservices and cluster deployments.</li>
-        <li>Designed event-driven architecture using AWS Lambda, EventBridge, and SNS.</li>
-        <li>Configured API Gateway, ELB, and NLB for service exposure.</li>
-        <li>Managed AMIs, EBS volumes, snapshots, and backup strategies.</li>
-        <li>Performed OS upgrades, security patching, and DevSecOps remediation.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section>
-    <h2>Education</h2>
+  <div class="skill-card">
+    <h4>Monitoring, Logging & Security</h4>
     <p>
-      <strong>B.Tech – Anna University</strong> (2023)<br />
-      First Class
+      ELK Stack (Filebeat, Metricbeat, Heartbeat), Prometheus, Grafana, Loki,
+      Snyk, Trivy, Grype, SonarQube, OS Hardening, Vulnerability Management
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:balajiinfo2202@gmail.com">balajiinfo2202@gmail.com</a></p>
-    <p>
-      LinkedIn:
-      <a href="https://linkedin.com/in/balaji-balaraman-devsecops" target="_blank">
-        linkedin.com/in/balaji-balaraman-devsecops
-      </a>
-    </p>
-  </section>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Project Experience (Enterprise Level)</h2>
 
-  <footer>
-    © 2025 Balaji Balaraman
-  </footer>
+  <!-- NORTHERN ARC -->
+  <div class="project-card">
+    <h3>Northern Arc – Financial Services Platform (Azure)</h3>
+    <p><strong>Business Context:</strong> High-volume fintech platform supporting NBFC client applications.</p>
+    <p><strong>Objective:</strong> Secure, automated microservice deployments with real-time observability.</p>
 
-  <script>
-    const toggle = document.getElementById("darkToggle");
-    toggle.addEventListener("change", () => {
-      document.body.classList.toggle("dark");
-    });
-  </script>
+    <ul>
+      <li>Designed and maintained Jenkins multi-server CI/CD pipelines for build, Docker image creation, and deployments.</li>
+      <li>Containerized and deployed microservices using Docker and Docker Swarm.</li>
+      <li>Configured Azure VNet, private subnets, and Nginx reverse proxy with SSL termination.</li>
+      <li>Implemented centralized logging using ELK Stack.</li>
+      <li>Configured Filebeat, Metricbeat, and Heartbeat for container health, system metrics, and uptime monitoring.</li>
+      <li>Enabled alerting for service failures and performance degradation.</li>
+      <li>Supported Paytm, MoneyView, and loan disbursement client platforms.</li>
+      <li>Performed Azure VM security hardening, OS patching, and vulnerability remediation.</li>
+    </ul>
+
+    <p><strong>Impact:</strong> Reduced downtime and improved deployment reliability with proactive monitoring.</p>
+  </div>
+
+  <!-- BORDERLESS ACCESS -->
+  <div class="project-card">
+    <h3>Borderless Access – Agentic AI Platform (Azure)</h3>
+    <p><strong>Business Context:</strong> AI-driven analytics platform using GPU-based workloads.</p>
+    <p><strong>Objective:</strong> Scalable, secure infrastructure for AI/ML services.</p>
+
+    <ul>
+      <li>Implemented AKS and Azure Container Apps for AI microservices.</li>
+      <li>Configured GPU-enabled AKS node pools for ML workloads.</li>
+      <li>Managed container images using Azure Container Registry.</li>
+      <li>Integrated Key Vault, PostgreSQL Flexible Server, Data Factory, Event Grid, and AI Foundry.</li>
+      <li>Designed secure networking using VPN, private subnets, Front Door, API Gateway, and Ingress.</li>
+      <li>Implemented Loki logging with sidecar containers.</li>
+      <li>Enabled Prometheus and Grafana for cluster and application metrics.</li>
+      <li>Enforced least-privilege access and private endpoints.</li>
+    </ul>
+
+    <p><strong>Impact:</strong> Enabled stable, scalable AI workloads with strong security controls.</p>
+  </div>
+
+  <!-- MARINER FINANCE -->
+  <div class="project-card">
+    <h3>Mariner Finance – Enterprise Financial Application (AWS)</h3>
+    <p><strong>Business Context:</strong> US-based financial services platform with strict compliance.</p>
+    <p><strong>Objective:</strong> Secure, compliant AWS microservices infrastructure.</p>
+
+    <ul>
+      <li>Managed EC2-based Docker microservices and cluster deployments.</li>
+      <li>Built CI/CD pipelines using Jenkins and GitHub Actions.</li>
+      <li>Implemented event-driven workflows using AWS Lambda, EventBridge, and SNS.</li>
+      <li>Configured API Gateway, ELB, and NLB for traffic routing.</li>
+      <li>Managed AMIs, EBS volumes, snapshots, and backup strategies.</li>
+      <li>Performed OS upgrades, security patching, and vulnerability remediation.</li>
+      <li>Validated fixes using AWS CLI and security scan re-validation.</li>
+    </ul>
+
+    <p><strong>Impact:</strong> Strengthened security posture without impacting release timelines.</p>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+  <h2>Professional Experience</h2>
+
+  <div class="career-card">
+    <h4>DevOps / DevSecOps Engineer – Zuci Systems India Pvt. Ltd.</h4>
+    <span>Aug 2023 – Present</span>
+    <ul>
+      <li>Designed CI/CD pipelines across Azure and AWS.</li>
+      <li>Automated infrastructure provisioning using Terraform.</li>
+      <li>Implemented centralized monitoring and logging.</li>
+      <li>Led DevSecOps remediation and compliance validation.</li>
+    </ul>
+  </div>
+
+  <div class="career-card">
+    <h4>Intern – Java & Cloud</h4>
+    <span>Dec 2022 – Jul 2023</span>
+    <ul>
+      <li>Trained in Java fundamentals, Linux administration, and cloud basics.</li>
+      <li>Supported CI/CD and deployment activities.</li>
+    </ul>
+  </div>
+
+  <h3>Certifications (Verified)</h3>
+  <ul class="cert-list">
+    <li><a href="https://www.credly.com/badges/f79c40c8-d736-47e9-ba90-6f36fa3830cf" target="_blank">Terraform Associate</a></li>
+    <li><a href="https://learn.microsoft.com/en-in/users/balajibalaraman-8723/credentials/643ad17970434bf8" target="_blank">Microsoft Certified: DevOps Engineer Expert (AZ-400)</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/users/balajibalaraman-8723/credentials/4b7e3774bec7989b" target="_blank">Microsoft Certified: Azure Developer Associate (AZ-204)</a></li>
+  </ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:balajiinfo2202@gmail.com">balajiinfo2202@gmail.com</a></p>
+  <p>Mobile: <strong>+91-6379742621</strong></p>
+  <p>LinkedIn:
+    <a href="https://linkedin.com/in/balaji-balaraman-devsecops" target="_blank">
+      linkedin.com/in/balaji-balaraman-devsecops
+    </a>
+  </p>
+</section>
+
+<footer>© 2025 Balaji Balaraman</footer>
+
+<!-- RESUME MODAL -->
+<div id="resumeModal" class="modal">
+  <div class="modal-content">
+    <span id="closeResume" class="close">&times;</span>
+    <h3>Resume Preview</h3>
+    <iframe src="Balaji_Balaraman_Resume.pdf"></iframe>
+    <a href="Balaji_Balaraman_Resume.pdf" download class="btn primary">Download Resume</a>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const body = document.body;
+
+  toggleBtn.onclick = () => {
+    body.classList.toggle("dark");
+    localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
+  };
+
+  const modal = document.getElementById("resumeModal");
+  document.getElementById("openResume").onclick = () => modal.style.display = "block";
+  document.getElementById("closeResume").onclick = () => modal.style.display = "none";
+  window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+</script>
 
 </body>
 </html>
