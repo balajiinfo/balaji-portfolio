@@ -8,64 +8,133 @@
 </head>
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <header class="hero">
-    <img src="public/profile.jpg" alt="Balaji Balaraman" class="profile-pic" />
-    <h1>Balaji Balaraman</h1>
-    <h3>DevOps / DevSecOps Engineer | Azure & AWS | 2.6 Years</h3>
-    <p class="summary">
-      I design, automate, and secure cloud-native applications using CI/CD,
-      Kubernetes, Terraform, and cloud security best practices.
-    </p>
+    <div class="hero-card">
+      <img src="/public/profile.jpg" alt="Balaji Balaraman" class="profile-pic" />
+      <h1>Balaji Balaraman</h1>
+      <h3>DevOps / DevSecOps Engineer</h3>
+      <p class="tagline">Azure • AWS • Kubernetes • CI/CD • DevSecOps</p>
+
+      <p class="summary">
+        DevOps / DevSecOps Engineer with 2.6 years of experience building,
+        automating, and securing cloud-native platforms across Azure and AWS.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn primary">Contact Me</a>
+        <a href="#" class="btn secondary">Download Resume</a>
+      </div>
+    </div>
   </header>
 
-  <!-- SKILLS -->
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Cloud:</strong> Azure, AWS</li>
-      <li><strong>CI/CD:</strong> Jenkins, GitHub Actions, Terraform</li>
-      <li><strong>Containers:</strong> Docker, Kubernetes, Docker Swarm</li>
-      <li><strong>Monitoring:</strong> ELK Stack, Prometheus, Grafana, Loki</li>
-      <li><strong>Security:</strong> DevSecOps, OS Hardening, Vulnerability Remediation</li>
-    </ul>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a DevOps / DevSecOps Engineer with strong experience in CI/CD automation,
+      containerized deployments, infrastructure as code, and cloud security.
+      I have worked across fintech, AI, and enterprise domains supporting
+      production-grade systems with high availability and compliance requirements.
+    </p>
+  </section>
+
+  <!-- CORE SKILLS -->
+  <section id="skills">
+    <h2>Core Skills</h2>
+
+    <div class="skills-grid">
+      <span>Azure</span>
+      <span>AWS</span>
+      <span>Jenkins</span>
+      <span>GitHub Actions</span>
+      <span>Terraform</span>
+      <span>Docker</span>
+      <span>Kubernetes</span>
+      <span>Docker Swarm</span>
+      <span>Azure Container Apps</span>
+      <span>AKS</span>
+      <span>ELK Stack</span>
+      <span>Prometheus</span>
+      <span>Grafana</span>
+      <span>Loki</span>
+      <span>DevSecOps</span>
+      <span>Linux</span>
+      <span>Shell Scripting</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="experience-item">
+      <h4>DevOps / DevSecOps Engineer — Zuci Systems</h4>
+      <span class="duration">Aug 2023 – Present</span>
+      <ul>
+        <li>Designed and maintained CI/CD pipelines using Jenkins and GitHub Actions.</li>
+        <li>Automated infrastructure provisioning using Terraform across Azure and AWS.</li>
+        <li>Managed containerized microservices on Kubernetes, Docker Swarm, and IaaS.</li>
+        <li>Performed DevSecOps remediation including OS patching and security hardening.</li>
+        <li>Implemented centralized logging and monitoring using ELK, Prometheus, Grafana, and Loki.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <h4>Intern — Java & Cloud</h4>
+      <span class="duration">Dec 2022 – Jul 2023</span>
+      <ul>
+        <li>Worked on Java application development and cloud fundamentals.</li>
+        <li>Gained hands-on experience with Linux, deployments, and cloud services.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- PROJECTS -->
-  <section>
-    <h2>Projects</h2>
+  <section id="projects">
+    <h2>Project Experience</h2>
 
     <div class="project">
       <h4>Northern Arc – Financial Services Platform (Azure)</h4>
-      <p>
-        Built and operated fintech microservices using Jenkins CI/CD,
-        Docker Swarm, Nginx, Azure VNet, and ELK Stack with Beats
-        for continuous health monitoring and alerting.
-      </p>
+      <ul>
+        <li>Managed microservice deployments using Jenkins and Docker Swarm.</li>
+        <li>Configured Azure VNet, Nginx, and ELK Stack with Filebeat, Metricbeat, and Heartbeat.</li>
+        <li>Enabled continuous health monitoring and alerting.</li>
+        <li>Worked on Paytm, MoneyView, and loan disbursement applications.</li>
+      </ul>
     </div>
 
     <div class="project">
       <h4>Borderless Access – Agentic AI Platform (Azure)</h4>
-      <p>
-        Implemented AKS and Azure Container Apps with GPU workloads,
-        secure networking, Event Grid integration, Loki logging with
-        sidecar containers, and Prometheus + Grafana monitoring.
-      </p>
+      <ul>
+        <li>Implemented AKS and Azure Container Apps for AI workloads.</li>
+        <li>Configured GPU-based AKS node pools.</li>
+        <li>Integrated Key Vault, PostgreSQL Flexible Server, Event Grid, ACR, Front Door.</li>
+        <li>Implemented Loki logging with sidecar containers and Prometheus + Grafana.</li>
+      </ul>
     </div>
 
     <div class="project">
       <h4>Mariner Finance – Enterprise Application (AWS)</h4>
-      <p>
-        Managed EC2-based Docker microservices with Jenkins CI/CD,
-        AWS Lambda, EventBridge, SNS, API Gateway, ELB/NLB,
-        AMI and EBS lifecycle management, and OS security patching.
-      </p>
+      <ul>
+        <li>Managed EC2-based Docker microservices and cluster deployments.</li>
+        <li>Worked with AWS Lambda, EventBridge, SNS, API Gateway, ELB/NLB.</li>
+        <li>Handled AMI, EBS, snapshots, OS upgrades, and security patching.</li>
+      </ul>
     </div>
+  </section>
 
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+    <p>
+      <strong>Bachelor’s Degree</strong><br />
+      Computer Science / Related Discipline
+    </p>
   </section>
 
   <!-- CONTACT -->
-  <section>
+  <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:balajiinfo2202@gmail.com">balajiinfo2202@gmail.com</a></p>
     <p>
@@ -82,3 +151,4 @@
 
 </body>
 </html>
+
