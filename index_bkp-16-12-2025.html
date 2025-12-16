@@ -6,11 +6,8 @@
   <title>Balaji Balaraman | DevOps / DevSecOps Engineer</title>
 
   <!-- SEO -->
-  <meta name="description" content="Balaji Balaraman – DevOps / DevSecOps Engineer with 2.6 years experience in Azure, AWS, CI/CD, Kubernetes, Terraform, Cloud Security."/>
-  <meta name="keywords" content="DevOps Engineer, DevSecOps, Azure, AWS, Kubernetes, Jenkins, Terraform"/>
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Balaji Balaraman – DevOps / DevSecOps Engineer with 2.6 years experience in Azure, AWS, CI/CD, Kubernetes, Terraform, and Cloud Security."/>
+  <meta name="keywords" content="DevOps Engineer, DevSecOps, Azure, AWS, Kubernetes, Jenkins, Terraform, CI/CD, Cloud Security"/>
 
   <link rel="stylesheet" href="style.css"/>
 </head>
@@ -20,13 +17,16 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-brand">BALAJI BALARAMAN</div>
+
   <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#career">Career</a></li>
-    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+
   <button id="themeToggle" class="theme-btn">🌙</button>
 </nav>
 
@@ -63,43 +63,37 @@
     infrastructure as code, cloud security remediation, and production observability.
   </p>
 </section>
+
 <!-- SKILLS -->
 <section id="skills">
   <h2>Core Technical Skills</h2>
 
-  <div class="card">
-    <div class="skill-block">
-      <h4>CI/CD & DevOps</h4>
-      <p>Jenkins (multibranch & multi-server), GitHub Actions, Azure DevOps, Nexus, Git, Bitbucket</p>
-    </div>
+  <div class="skill-card">
+    <h4>CI/CD & DevOps</h4>
+    <p>Jenkins (multibranch & multi-server), GitHub Actions, Azure DevOps, Nexus, Git, Bitbucket</p>
+  </div>
 
-    <div class="divider"></div>
+  <div class="skill-card">
+    <h4>Cloud Platforms</h4>
+    <p>
+      <strong>Azure:</strong> AKS, Azure Container Apps, ACR, Key Vault,
+      PostgreSQL Flexible Server, Data Factory, Event Grid, Front Door, Application Insights<br/>
+      <strong>AWS:</strong> EC2, Lambda, EventBridge, SNS, API Gateway,
+      ELB, NLB, IAM, S3, CloudWatch
+    </p>
+  </div>
 
-    <div class="skill-block">
-      <h4>Cloud Platforms</h4>
-      <p>
-        <strong>Azure:</strong> AKS, Azure Container Apps, ACR, Key Vault, PostgreSQL Flexible Server,
-        Data Factory, Event Grid, Front Door, Application Insights<br/>
-        <strong>AWS:</strong> EC2, Lambda, EventBridge, SNS, API Gateway, ELB, NLB, IAM, S3, CloudWatch
-      </p>
-    </div>
+  <div class="skill-card">
+    <h4>Containers & Infrastructure as Code</h4>
+    <p>Docker, Kubernetes (AKS & EKS), Docker Swarm, Docker Compose, Podman, Terraform (Intermediate)</p>
+  </div>
 
-    <div class="divider"></div>
-
-    <div class="skill-block">
-      <h4>Containers & Infrastructure as Code</h4>
-      <p>Docker, Kubernetes (AKS & EKS), Docker Swarm, Docker Compose, Podman, Terraform</p>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="skill-block">
-      <h4>Monitoring, Logging & Security</h4>
-      <p>
-        ELK Stack (Filebeat, Metricbeat, Heartbeat), Prometheus, Grafana, Loki,
-        Snyk, Trivy, Grype, SonarQube, OS Hardening, Vulnerability Management
-      </p>
-    </div>
+  <div class="skill-card">
+    <h4>Monitoring, Logging & Security</h4>
+    <p>
+      ELK Stack (Filebeat, Metricbeat, Heartbeat), Prometheus, Grafana, Loki,
+      Snyk, Trivy, Grype, SonarQube, OS Hardening, Vulnerability Management
+    </p>
   </div>
 </section>
 
@@ -107,10 +101,12 @@
 <section id="projects">
   <h2>Project Experience (Enterprise Level)</h2>
 
-  <!-- OPEN BY DEFAULT -->
-  <details class="project-card" open>
-    <summary>Non Banking Financial Services Platform (Azure)</summary>
+  <!-- NORTHERN ARC -->
+  <div class="project-card">
+    <h3>Northern Arc – Financial Services Platform (Azure)</h3>
     <p><strong>Business Context:</strong> High-volume fintech platform supporting NBFC client applications.</p>
+    <p><strong>Objective:</strong> Secure, automated microservice deployments with real-time observability.</p>
+
     <ul>
       <li>Designed and maintained Jenkins multi-server CI/CD pipelines for build, Docker image creation, and deployments.</li>
       <li>Containerized and deployed microservices using Docker and Docker Swarm.</li>
@@ -121,11 +117,16 @@
       <li>Supported Paytm, MoneyView, and loan disbursement client platforms.</li>
       <li>Performed Azure VM security hardening, OS patching, and vulnerability remediation.</li>
     </ul>
-    <p class="impact"><strong>Impact:</strong> Reduced downtime and improved deployment reliability.</p>
-  </details>
 
-  <details class="project-card">
-    <summary>Agentic AI Platform (Azure)</summary>
+    <p><strong>Impact:</strong> Reduced downtime and improved deployment reliability with proactive monitoring.</p>
+  </div>
+
+  <!-- BORDERLESS ACCESS -->
+  <div class="project-card">
+    <h3>Borderless Access – Agentic AI Platform (Azure)</h3>
+    <p><strong>Business Context:</strong> AI-driven analytics platform using GPU-based workloads.</p>
+    <p><strong>Objective:</strong> Scalable, secure infrastructure for AI/ML services.</p>
+
     <ul>
       <li>Implemented AKS and Azure Container Apps for AI microservices.</li>
       <li>Configured GPU-enabled AKS node pools for ML workloads.</li>
@@ -136,11 +137,16 @@
       <li>Enabled Prometheus and Grafana for cluster and application metrics.</li>
       <li>Enforced least-privilege access and private endpoints.</li>
     </ul>
-    <p class="impact"><strong>Impact:</strong> Secure, scalable AI workloads.</p>
-  </details>
 
-  <details class="project-card">
-    <summary>Enterprise Financial Application (AWS)</summary>
+    <p><strong>Impact:</strong> Enabled stable, scalable AI workloads with strong security controls.</p>
+  </div>
+
+  <!-- MARINER FINANCE -->
+  <div class="project-card">
+    <h3>Mariner Finance – Enterprise Financial Application (AWS)</h3>
+    <p><strong>Business Context:</strong> US-based financial services platform with strict compliance.</p>
+    <p><strong>Objective:</strong> Secure, compliant AWS microservices infrastructure.</p>
+
     <ul>
       <li>Managed EC2-based Docker microservices and cluster deployments.</li>
       <li>Built CI/CD pipelines using Jenkins and GitHub Actions.</li>
@@ -150,8 +156,9 @@
       <li>Performed OS upgrades, security patching, and vulnerability remediation.</li>
       <li>Validated fixes using AWS CLI and security scan re-validation.</li>
     </ul>
-    <p class="impact"><strong>Impact:</strong> Strengthened compliance without delays.</p>
-  </details>
+
+    <p><strong>Impact:</strong> Strengthened security posture without impacting release timelines.</p>
+  </div>
 </section>
 
 <!-- CAREER -->
@@ -177,75 +184,21 @@
       <li>Supported CI/CD and deployment activities.</li>
     </ul>
   </div>
+
+  <h3>Certifications (Verified)</h3>
+  <ul class="cert-list">
+    <li><a href="https://www.credly.com/badges/f79c40c8-d736-47e9-ba90-6f36fa3830cf" target="_blank">Terraform Associate</a></li>
+    <li><a href="https://learn.microsoft.com/en-in/users/balajibalaraman-8723/credentials/643ad17970434bf8" target="_blank">Microsoft Certified: DevOps Engineer Expert (AZ-400)</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/users/balajibalaraman-8723/credentials/4b7e3774bec7989b" target="_blank">Microsoft Certified: Azure Developer Associate (AZ-204)</a></li>
+  </ul>
 </section>
-
-<!-- CERTIFICATIONS -->
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <h2>Certifications (Verified)</h2>
-
-  <div class="cert-grid">
-
-    <!-- Terraform -->
-    <a
-      href="https://www.credly.com/badges/f79c40c8-d736-47e9-ba90-6f36fa3830cf"
-      target="_blank"
-      class="cert-card"
-    >
-      <img
-        src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg"
-        alt="Terraform Logo"
-        class="cert-logo"
-      />
-      <h4>Terraform Associate</h4>
-      <p class="issuer">HashiCorp</p>
-      <span class="verified">✔ Verified · View Credential ↗</span>
-    </a>
-
-    <!-- AZ-400 -->
-    <a
-      href="https://learn.microsoft.com/en-in/users/balajibalaraman-8723/credentials/643ad17970434bf8"
-      target="_blank"
-      class="cert-card"
-    >
-      <img
-        src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-expert-badge.svg"
-        alt="AZ-400 Badge"
-        class="cert-logo"
-      />
-      <h4>Azure DevOps Engineer Expert</h4>
-      <p class="issuer">Microsoft · AZ-400</p>
-      <span class="verified">✔ Verified · View Credential ↗</span>
-    </a>
-
-    <!-- AZ-204 -->
-    <a
-      href="https://learn.microsoft.com/en-us/users/balajibalaraman-8723/credentials/4b7e3774bec7989b"
-      target="_blank"
-      class="cert-card"
-    >
-      <img
-        src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg"
-        alt="AZ-204 Badge"
-        class="cert-logo"
-      />
-      <h4>Azure Developer Associate</h4>
-      <p class="issuer">Microsoft · AZ-204</p>
-      <span class="verified">✔ Verified · View Credential ↗</span>
-    </a>
-
-  </div>
-</section>
-
-
 
 <!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: <a href="mailto:balajiinfo2202@gmail.com">balajiinfo2202@gmail.com</a></p>
-  <p>Mobile: +91-6379742621</p>
-  <p>
-    LinkedIn:
+  <p>Mobile: <strong>+91-6379742621</strong></p>
+  <p>LinkedIn:
     <a href="https://linkedin.com/in/balaji-balaraman-devsecops" target="_blank">
       linkedin.com/in/balaji-balaraman-devsecops
     </a>
@@ -279,5 +232,7 @@
   document.getElementById("closeResume").onclick = () => modal.style.display = "none";
   window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
 </script>
+
 </body>
 </html>
+
