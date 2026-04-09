@@ -4,280 +4,608 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Balaji Balaraman | DevOps / DevSecOps Engineer</title>
+  <meta name="description" content="Balaji Balaraman – DevOps / DevSecOps Engineer with 3+ years in Azure, AWS, Kubernetes, Terraform, Cloud Security."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080E17;--card:#111C2D;--card-hover:#152234;
+  --border:rgba(255,255,255,0.07);--border-hi:rgba(56,189,248,0.35);
+  --blue:#38BDF8;--blue-dim:rgba(56,189,248,0.12);
+  --green:#34D399;--green-dim:rgba(52,211,153,0.1);
+  --text:#F1F5F9;--muted:#94A3B8;--faint:#3B4F66;
+  --font-h:'Plus Jakarta Sans',sans-serif;
+  --font-b:'Outfit',sans-serif;
+  --r:14px;--rs:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:inherit}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--faint);border-radius:4px}
 
-  <!-- SEO -->
-  <meta name="description" content="Balaji Balaraman – DevOps / DevSecOps Engineer with 2.6 years experience in Azure, AWS, CI/CD, Kubernetes, Terraform, Cloud Security."/>
-  <meta name="keywords" content="DevOps Engineer, DevSecOps, Azure, AWS, Kubernetes, Jenkins, Terraform"/>
+/* PROGRESS BAR */
+#bar{position:fixed;top:0;left:0;z-index:9999;height:3px;width:0%;background:linear-gradient(90deg,var(--blue),var(--green));transition:width .1s}
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+/* ── NAV ── */
+.nav{position:fixed;top:3px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:62px;background:rgba(8,14,23,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-h);font-weight:800;font-size:1.05rem;letter-spacing:-.5px}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;gap:32px}
+.nav-links a{font-size:.8rem;font-weight:500;color:var(--muted);letter-spacing:.3px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{display:flex;align-items:center;gap:7px;padding:8px 20px;background:var(--blue);color:#000;font-weight:700;font-size:.8rem;border:none;border-radius:var(--rs);transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
 
-  <link rel="stylesheet" href="style.css"/>
+/* ── HERO ── */
+/* Key fix: no min-height, align-items:start so stats card doesn't stretch the row */
+.hero{position:relative;padding:74px 60px 0;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 80% 30%,rgba(56,189,248,.07) 0%,transparent 55%),radial-gradient(ellipse 45% 45% at 10% 70%,rgba(167,139,250,.06) 0%,transparent 55%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.035) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+
+.hero-inner{
+  position:relative;z-index:1;
+  max-width:1160px;margin:auto;
+  display:grid;
+  /* photo fixed | summary flexible | stats fixed */
+  grid-template-columns:185px 1fr 172px;
+  gap:34px;
+  /* align-items:start prevents the stats card from being stretched by photo height */
+  align-items:start;
+  /* bottom padding on inner, not on section — avoids any background-color gap */
+  padding-bottom:36px;
+}
+
+/* ── PHOTO COL ── */
+.hero-photo-col{display:flex;flex-direction:column;align-items:center;gap:11px}
+.hero-avatar-box{
+  width:155px;height:165px;
+  border-radius:14px;overflow:hidden;
+  border:2px solid rgba(56,189,248,.38);
+  box-shadow:0 0 0 5px rgba(56,189,248,.06),0 14px 40px rgba(0,0,0,.55);
+}
+.hero-avatar-box img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:5px 12px;
+  background:var(--blue-dim);border:1px solid rgba(56,189,248,.25);
+  border-radius:100px;font-size:.68rem;font-weight:600;color:var(--blue);
+  letter-spacing:.4px;white-space:nowrap;
+}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:blink 2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── SUMMARY COL ── */
+.hero-mid{display:flex;flex-direction:column;padding-top:4px}
+.hero-name{font-family:var(--font-h);font-size:clamp(1.75rem,2.9vw,2.5rem);font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:9px}
+.hero-role{font-size:.91rem;color:var(--muted);margin-bottom:15px;line-height:1.65}
+.hero-role strong{color:var(--text);font-weight:600}
+.hero-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.chip{padding:4px 11px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;font-size:.69rem;font-weight:500;color:var(--muted)}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ── STATS CARD ── */
+.hero-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r);padding:20px 16px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.stat-num{font-family:var(--font-h);font-size:1.8rem;font-weight:800;color:var(--blue);line-height:1;text-align:center}
+.stat-label{font-size:.58rem;color:var(--muted);font-weight:500;letter-spacing:.5px;margin-top:2px;text-transform:uppercase;text-align:center}
+.stat-div{height:1px;background:var(--border)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:var(--rs);font-weight:600;font-size:.83rem;transition:all .2s;border:none}
+.btn-solid{background:var(--blue);color:#000}
+.btn-solid:hover{background:#7DD3FC}
+.btn-ghost{background:rgba(255,255,255,.05);color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.15)}
+
+/* ── SECTIONS ── */
+/* Tight: 44px top/bottom — no wasted space */
+.section{max-width:1100px;margin:0 auto;padding:44px 48px}
+.sec-tag{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+.sec-tag::before{content:'';display:block;width:20px;height:2px;background:var(--blue);border-radius:2px}
+.sec-title{font-family:var(--font-h);font-size:clamp(1.35rem,2.5vw,1.9rem);font-weight:800;letter-spacing:-1px;margin-bottom:24px;line-height:1.1}
+
+/* SCROLL REVEAL */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .48s ease,transform .48s ease}
+.rv.show{opacity:1;transform:none}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sk-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:17px;transition:border-color .25s,background .25s}
+.sk-card:hover{border-color:var(--border-hi);background:var(--card-hover)}
+.sk-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.sk-icon{width:31px;height:31px;border-radius:8px;background:var(--blue-dim);border:1px solid rgba(56,189,248,.2);display:flex;align-items:center;justify-content:center;font-size:.88rem;flex-shrink:0}
+.sk-head h4{font-family:var(--font-h);font-size:.81rem;font-weight:700;color:var(--text)}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;font-size:.66rem;color:var(--muted);font-weight:500;transition:all .2s}
+.sk-card:hover .tag{border-color:rgba(56,189,248,.2);color:#CBD5E1}
+
+/* ── PROJECTS ── */
+.proj-list{display:flex;flex-direction:column;gap:11px}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .25s}
+.proj-card:hover{border-color:var(--border-hi)}
+.proj-top{padding:18px 22px;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:13px;align-items:start;user-select:none}
+.proj-num{display:flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:8px;background:var(--blue-dim);border:1px solid rgba(56,189,248,.2);font-family:var(--font-h);font-size:.69rem;font-weight:800;color:var(--blue);flex-shrink:0;margin-top:2px}
+.proj-meta h3{font-family:var(--font-h);font-size:.93rem;font-weight:700;letter-spacing:-.3px;margin-bottom:3px}
+.proj-sub{font-size:.72rem;color:var(--muted);margin-bottom:8px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:4px}
+.ptag{padding:2px 8px;background:var(--blue-dim);border:1px solid rgba(56,189,248,.2);border-radius:100px;font-size:.63rem;font-weight:600;color:var(--blue)}
+.chevron{display:flex;align-items:center;justify-content:center;width:27px;height:27px;border:1px solid var(--border);border-radius:7px;background:rgba(255,255,255,.04);color:var(--muted);flex-shrink:0;transition:all .25s;margin-top:2px}
+.chevron svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.proj-card.open .chevron{background:var(--blue-dim);border-color:rgba(56,189,248,.3);color:var(--blue)}
+.proj-card.open .chevron svg{transform:rotate(180deg)}
+.proj-body{max-height:0;overflow:hidden;transition:max-height .42s cubic-bezier(.4,0,.2,1)}
+.proj-body.open{max-height:900px}
+.proj-inner{padding:14px 22px 18px;border-top:1px solid var(--border)}
+.proj-desc{font-size:.82rem;color:var(--muted);line-height:1.8;margin-bottom:13px}
+.proj-pts{display:flex;flex-direction:column;margin-bottom:13px}
+.proj-pts li{display:flex;gap:10px;font-size:.8rem;color:var(--text);padding:6px 0;border-bottom:1px solid var(--border);line-height:1.6}
+.proj-pts li:last-child{border-bottom:none}
+.proj-pts li::before{content:'→';color:var(--blue);flex-shrink:0;font-size:.74rem;margin-top:2px}
+.impact{display:flex;gap:10px;padding:10px 13px;background:var(--green-dim);border:1px solid rgba(52,211,153,.2);border-left:3px solid var(--green);border-radius:var(--rs);align-items:flex-start}
+.impact-lbl{font-size:.63rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green);white-space:nowrap;margin-top:2px;flex-shrink:0}
+.impact-txt{font-size:.78rem;color:var(--text);line-height:1.6}
+
+/* ── TIMELINE ── */
+.tl{position:relative;padding-left:28px}
+.tl::before{content:'';position:absolute;left:0;top:8px;bottom:40px;width:2px;background:linear-gradient(180deg,var(--blue) 0%,transparent 100%);border-radius:2px}
+.tl-item{position:relative;padding-bottom:36px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-35px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--blue);box-shadow:0 0 0 4px rgba(56,189,248,.1)}
+.tl-dot.dim{border-color:var(--faint);box-shadow:none}
+.tl-date{display:inline-flex;padding:3px 10px;background:var(--blue-dim);border:1px solid rgba(56,189,248,.2);border-radius:100px;font-size:.68rem;font-weight:600;color:var(--blue);margin-bottom:8px}
+.tl-role{font-family:var(--font-h);font-size:1.02rem;font-weight:700;letter-spacing:-.3px;margin-bottom:2px}
+.tl-co{font-size:.77rem;color:var(--muted);margin-bottom:10px}
+.tl-pts li{display:flex;gap:9px;font-size:.8rem;color:var(--muted);padding:4px 0;line-height:1.65}
+.tl-pts li::before{content:'→';font-size:.66rem;color:var(--blue);flex-shrink:0;margin-top:3px}
+
+/* ── CERTS ── */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cert-card{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:22px 16px 18px;
+  transition:border-color .25s,transform .25s;
+  position:relative;overflow:hidden;color:var(--text);
+}
+.cert-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.cert-card.ms::before{background:linear-gradient(90deg,#0078D4,#50E6FF)}
+.cert-card.hc::before{background:linear-gradient(90deg,#7B42BC,#A78BFA)}
+.cert-card:hover{border-color:var(--border-hi);transform:translateY(-3px)}
+/* Badge image container — square, object-contain so logos don't crop */
+.cert-badge-img{
+  width:88px;height:88px;
+  object-fit:contain;
+  margin-bottom:13px;
+  border-radius:10px;
+}
+.cert-issuer{font-size:.63rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.cert-name{font-family:var(--font-h);font-size:.87rem;font-weight:700;color:var(--text);margin-bottom:4px;line-height:1.3}
+.cert-code{font-size:.69rem;color:var(--muted);margin-bottom:10px}
+.cert-valid{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;background:var(--green-dim);border:1px solid rgba(52,211,153,.25);border-radius:100px;font-size:.66rem;font-weight:600;color:var(--green);margin-bottom:10px}
+.cert-valid::before{content:'✓'}
+.cert-link{font-size:.69rem;font-weight:600;color:var(--blue);transition:opacity .2s}
+.cert-link:hover{opacity:.7}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact-hl{font-family:var(--font-h);font-size:clamp(1.1rem,2vw,1.6rem);font-weight:800;letter-spacing:-.5px;line-height:1.3;margin-bottom:10px}
+.contact-hl span{color:var(--blue)}
+.contact-sub{font-size:.83rem;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.c-items{display:flex;flex-direction:column;gap:8px}
+.c-item{display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--card);border:1px solid var(--border);border-radius:var(--rs);transition:border-color .2s}
+.c-item:hover{border-color:var(--border-hi)}
+.c-icon{width:33px;height:33px;border-radius:8px;background:var(--blue-dim);border:1px solid rgba(56,189,248,.2);display:flex;align-items:center;justify-content:center;font-size:.86rem;flex-shrink:0}
+.c-type{font-size:.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:1px}
+.c-val{font-size:.81rem;color:var(--text);font-weight:500}
+.avail-card{background:var(--card);border:1px solid rgba(52,211,153,.2);border-radius:var(--r);padding:24px 22px}
+.avail-top{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.dot-wrap{width:10px;height:10px;position:relative}
+.dot-core{width:10px;height:10px;border-radius:50%;background:var(--green);position:absolute}
+.dot-ring{width:10px;height:10px;border-radius:50%;background:var(--green);position:absolute;animation:ping 1.8s ease-out infinite;opacity:0}
+@keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.8);opacity:0}}
+.avail-lbl{font-size:.72rem;font-weight:700;color:var(--green);letter-spacing:.5px}
+.avail-title{font-family:var(--font-h);font-size:.98rem;font-weight:700;margin-bottom:7px;letter-spacing:-.3px}
+.avail-body{font-size:.8rem;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.avail-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.avail-tag{padding:4px 10px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:100px;font-size:.69rem;color:var(--muted)}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:20px 48px;display:flex;justify-content:space-between;align-items:center;font-size:.73rem;color:var(--muted)}
+
+/* MODAL */
+.modal-bg{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);align-items:center;justify-content:center}
+.modal-bg.show{display:flex}
+.modal-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);width:92vw;max-width:860px;height:88vh;display:flex;flex-direction:column;overflow:hidden}
+.modal-top{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--border);flex-shrink:0}
+.modal-top h4{font-family:var(--font-h);font-size:.82rem;font-weight:700}
+.modal-close{width:27px;height:27px;border:1px solid var(--border);border-radius:7px;background:rgba(255,255,255,.04);color:var(--muted);font-size:.86rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.modal-close:hover{background:rgba(255,255,255,.08);color:var(--text)}
+.modal-box iframe{flex:1;width:100%;border:none}
+.modal-ft{padding:11px 18px;border-top:1px solid var(--border);flex-shrink:0}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:160px 1fr 162px;gap:26px}
+  .hero-avatar-box{width:138px;height:148px}
+}
+@media(max-width:820px){
+  .nav{padding:0 18px}.nav-links{display:none}
+  .hero{padding:72px 18px 0}
+  .hero-inner{grid-template-columns:1fr;gap:16px;padding-bottom:28px}
+  .hero-photo-col{flex-direction:row;align-items:center;gap:13px}
+  .hero-avatar-box{width:76px;height:76px;border-radius:50%}
+  .hero-card{display:none}
+  .section{padding:38px 18px}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .cert-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer{flex-direction:column;gap:5px;text-align:center;padding:16px 18px}
+}
+@media(max-width:520px){.skills-grid{grid-template-columns:1fr}}
+</style>
 </head>
+<body>
+<div id="bar"></div>
 
-<body class="dark">
-
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-brand">BALAJI BALARAMAN</div>
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-logo">Balaji<span>.</span></div>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#career">Career</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#certifications">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button id="themeToggle" class="theme-btn">🌙</button>
+  <button class="nav-cta" id="openResume">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Resume
+  </button>
 </nav>
 
-<!-- HERO -->
-<section id="home" class="hero">
-  <img src="/public/profile.jpg" alt="Balaji Balaraman" class="profile-pic"/>
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
 
-  <h1>Balaji Balaraman</h1>
-  <h3>DevOps / DevSecOps Engineer</h3>
-
-  <p class="hero-sub">
-    Azure • AWS • CI/CD • Kubernetes • Terraform • Cloud Security • Observability
-  </p>
-
-  <p class="hero-desc">
-    Results-driven DevOps / DevSecOps Engineer with 2.6 years of hands-on experience
-    designing, automating, and securing cloud-native platforms across Azure and AWS.
-    Strong focus on reliability, scalability, compliance, and production stability.
-  </p>
-
-  <div class="hero-actions">
-    <a href="#contact" class="btn primary">Contact Me</a>
-    <button id="openResume" class="btn secondary">View Resume</button>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I currently work at <strong>Zuci Systems India Pvt. Ltd.</strong> as a DevOps /
-    DevSecOps Engineer, supporting enterprise, fintech, and AI-based platforms.
-    My responsibilities include CI/CD automation, container orchestration,
-    infrastructure as code, cloud security remediation, and production observability.
-  </p>
-</section>
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Core Technical Skills</h2>
-
-  <div class="card">
-    <div class="skill-block">
-      <h4>CI/CD & DevOps</h4>
-      <p>Jenkins (multibranch & multi-server), GitHub Actions, Azure DevOps, Nexus, Git, Bitbucket</p>
+    <!-- LEFT: Photo -->
+    <div class="hero-photo-col">
+      <div class="hero-avatar-box">
+        <img src="profile.jpg.png" alt="Balaji Balaraman" onerror="this.parentElement.style.background='#111C2D'"/>
+      </div>
+      <div class="hero-badge">Open to Opportunities</div>
     </div>
 
-    <div class="divider"></div>
-
-    <div class="skill-block">
-      <h4>Cloud Platforms</h4>
-      <p>
-        <strong>Azure:</strong> AKS, Azure Container Apps, ACR, Key Vault, PostgreSQL Flexible Server,
-        Data Factory, Event Grid, Front Door, Application Insights<br/>
-        <strong>AWS:</strong> EC2, Lambda, EventBridge, SNS, API Gateway, ELB, NLB, IAM, S3, CloudWatch
+    <!-- MIDDLE: Summary -->
+    <div class="hero-mid">
+      <h1 class="hero-name">Balaji Balaraman</h1>
+      <p class="hero-role">
+        <strong>DevOps / DevSecOps Engineer</strong> with 3+ years building secure,
+        scalable cloud infrastructure across <strong>Azure, AWS &amp; GCP</strong> —
+        from CI/CD pipelines to Kubernetes clusters at enterprise fintech scale.
       </p>
+      <div class="hero-chips">
+        <span class="chip">☁️ Azure · AWS</span>
+        <span class="chip">⎈ Kubernetes</span>
+        <span class="chip">🔒 DevSecOps</span>
+        <span class="chip">📦 Terraform</span>
+        <span class="chip">📊 Observability</span>
+        <span class="chip">🐳 Docker</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-solid">View Projects →</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
     </div>
 
-    <div class="divider"></div>
-
-    <div class="skill-block">
-      <h4>Containers & Infrastructure as Code</h4>
-      <p>Docker, Kubernetes (AKS & EKS), Docker Swarm, Docker Compose, Podman, Terraform</p>
+    <!-- RIGHT: Stats card -->
+    <div class="hero-card">
+      <div><div class="stat-num">3+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat-div"></div>
+      <div><div class="stat-num">3</div><div class="stat-label">Cloud Platforms</div></div>
+      <div class="stat-div"></div>
+      <div><div class="stat-num">3</div><div class="stat-label">Certifications</div></div>
+      <div class="stat-div"></div>
+      <div><div class="stat-num">3</div><div class="stat-label">Enterprise Projects</div></div>
     </div>
 
-    <div class="divider"></div>
+  </div>
+</section>
 
-    <div class="skill-block">
-      <h4>Monitoring, Logging & Security</h4>
-      <p>
-        ELK Stack (Filebeat, Metricbeat, Heartbeat), Prometheus, Grafana, Loki,
-        Snyk, Trivy, Grype, SonarQube, OS Hardening, Vulnerability Management
-      </p>
+<!-- ══ SKILLS ══ -->
+<section class="section" id="skills">
+  <div class="sec-tag">Capabilities</div>
+  <h2 class="sec-title">Core Technical Stack</h2>
+  <div class="skills-grid">
+    <div class="sk-card rv">
+      <div class="sk-head"><div class="sk-icon">⚙️</div><h4>CI/CD &amp; DevOps</h4></div>
+      <div class="tags"><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">Azure DevOps</span><span class="tag">Nexus</span><span class="tag">SonarQube</span><span class="tag">Git</span><span class="tag">Bitbucket</span></div>
+    </div>
+    <div class="sk-card rv">
+      <div class="sk-head"><div class="sk-icon">☁️</div><h4>Azure Cloud</h4></div>
+      <div class="tags"><span class="tag">AKS</span><span class="tag">Container Apps</span><span class="tag">ACR</span><span class="tag">Key Vault</span><span class="tag">PostgreSQL Flex</span><span class="tag">Data Factory</span><span class="tag">Event Grid</span><span class="tag">Front Door</span><span class="tag">App Insights</span><span class="tag">AI Foundry</span></div>
+    </div>
+    <div class="sk-card rv">
+      <div class="sk-head"><div class="sk-icon">🟠</div><h4>AWS Cloud</h4></div>
+      <div class="tags"><span class="tag">EC2</span><span class="tag">ECS</span><span class="tag">Lambda</span><span class="tag">EventBridge</span><span class="tag">SNS</span><span class="tag">API Gateway</span><span class="tag">ELB / NLB</span><span class="tag">IAM</span><span class="tag">S3</span><span class="tag">CloudWatch</span></div>
+    </div>
+    <div class="sk-card rv">
+      <div class="sk-head"><div class="sk-icon">🐳</div><h4>Containers &amp; IaC</h4></div>
+      <div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">AKS</span><span class="tag">EKS</span><span class="tag">Docker Swarm</span><span class="tag">Podman</span><span class="tag">Terraform</span><span class="tag">Ansible</span></div>
+    </div>
+    <div class="sk-card rv">
+      <div class="sk-head"><div class="sk-icon">📊</div><h4>Observability</h4></div>
+      <div class="tags"><span class="tag">ELK Stack</span><span class="tag">Filebeat</span><span class="tag">Metricbeat</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Loki</span><span class="tag">Dynatrace</span><span class="tag">Datadog</span></div>
+    </div>
+    <div class="sk-card rv">
+      <div class="sk-head"><div class="sk-icon">🔒</div><h4>DevSecOps &amp; Security</h4></div>
+      <div class="tags"><span class="tag">Snyk</span><span class="tag">Trivy</span><span class="tag">Grype</span><span class="tag">Vuln. Management</span><span class="tag">OS Hardening</span><span class="tag">IAM Least-Privilege</span><span class="tag">Compliance</span></div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Project Experience (Enterprise Level)</h2>
+<!-- ══ PROJECTS ══ -->
+<section class="section" id="projects">
+  <div class="sec-tag">Work</div>
+  <h2 class="sec-title">Enterprise Projects</h2>
+  <div class="proj-list">
 
-  <!-- OPEN BY DEFAULT -->
-  <details class="project-card" open>
-    <summary>Non Banking Financial Services Platform (Azure)</summary>
-    <p><strong>Business Context:</strong> High-volume fintech platform supporting NBFC client applications.</p>
-    <ul>
-      <li>Designed and maintained Jenkins multi-server CI/CD pipelines for build, Docker image creation, and deployments.</li>
-      <li>Containerized and deployed microservices using Docker and Docker Swarm.</li>
-      <li>Configured Azure VNet, private subnets, and Nginx reverse proxy with SSL termination.</li>
-      <li>Implemented centralized logging using ELK Stack.</li>
-      <li>Configured Filebeat, Metricbeat, and Heartbeat for container health, system metrics, and uptime monitoring.</li>
-      <li>Enabled alerting for service failures and performance degradation.</li>
-      <li>Supported Paytm, MoneyView, and loan disbursement client platforms.</li>
-      <li>Performed Azure VM security hardening, OS patching, and vulnerability remediation.</li>
-    </ul>
-    <p class="impact"><strong>Impact:</strong> Reduced downtime and improved deployment reliability.</p>
-  </details>
+    <div class="proj-card rv" id="pc1">
+      <div class="proj-top" onclick="tog('pc1','pb1')">
+        <div class="proj-num">01</div>
+        <div class="proj-meta">
+          <h3>Northern Arc — Financial Services Platform</h3>
+          <div class="proj-sub">Leading Indian NBFC enablement platform · Azure · Jenkins · Docker · Kubernetes · ELK Stack</div>
+          <div class="proj-tags"><span class="ptag">Azure</span><span class="ptag">Jenkins</span><span class="ptag">Docker Swarm</span><span class="ptag">Kubernetes</span><span class="ptag">Nginx</span><span class="ptag">ELK Stack</span></div>
+        </div>
+        <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="proj-body" id="pb1">
+        <div class="proj-inner">
+          <p class="proj-desc">Designed and secured a high-volume fintech infrastructure supporting multiple NBFC lending applications — Paytm, MoneyView, and loan disbursement platforms — connecting lenders and borrowers across India's credit ecosystem under stringent financial compliance requirements.</p>
+          <ul class="proj-pts">
+            <li>Built and maintained Jenkins multi-server CI/CD pipelines for microservice build, Docker image creation, and multi-environment deployments across dev, staging, and production.</li>
+            <li>Containerized and deployed microservices using Docker, Docker Swarm, and Kubernetes with Nginx reverse proxy and SSL/TLS termination for secure client traffic routing.</li>
+            <li>Configured Azure Virtual Network, private subnets, and secure networking for high-compliance fintech workloads supporting Paytm, MoneyView, and loan disbursement platforms.</li>
+            <li>Implemented centralized logging and alerting with ELK Stack (Filebeat, Metricbeat, Heartbeat) for container health monitoring, system metrics, and uptime visibility.</li>
+            <li>Performed Azure VM security hardening, vulnerability remediation (Snyk/Trivy), and OS patching to meet strict financial sector compliance requirements.</li>
+          </ul>
+          <div class="impact"><span class="impact-lbl">Impact</span><span class="impact-txt">Reduced unplanned downtime and standardized deployment workflows across all NBFC client platforms — enabling consistent, compliant releases at fintech scale.</span></div>
+        </div>
+      </div>
+    </div>
 
-  <details class="project-card">
-    <summary>Agentic AI Platform (Azure)</summary>
-    <ul>
-      <li>Implemented AKS and Azure Container Apps for AI microservices.</li>
-      <li>Configured GPU-enabled AKS node pools for ML workloads.</li>
-      <li>Managed container images using Azure Container Registry.</li>
-      <li>Integrated Key Vault, PostgreSQL Flexible Server, Data Factory, Event Grid, and AI Foundry.</li>
-      <li>Designed secure networking using VPN, private subnets, Front Door, API Gateway, and Ingress.</li>
-      <li>Implemented Loki logging with sidecar containers.</li>
-      <li>Enabled Prometheus and Grafana for cluster and application metrics.</li>
-      <li>Enforced least-privilege access and private endpoints.</li>
-    </ul>
-    <p class="impact"><strong>Impact:</strong> Secure, scalable AI workloads.</p>
-  </details>
+    <div class="proj-card rv" id="pc2">
+      <div class="proj-top" onclick="tog('pc2','pb2')">
+        <div class="proj-num">02</div>
+        <div class="proj-meta">
+          <h3>Borderless Access — Agentic AI Platform</h3>
+          <div class="proj-sub">Global market research &amp; data intelligence · Azure · AKS · GPU Workloads · Prometheus · Grafana</div>
+          <div class="proj-tags"><span class="ptag">AKS</span><span class="ptag">GPU Node Pools</span><span class="ptag">Container Apps</span><span class="ptag">AI Foundry</span><span class="ptag">Prometheus</span><span class="ptag">Loki</span></div>
+        </div>
+        <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="proj-body" id="pb2">
+        <div class="proj-inner">
+          <p class="proj-desc">Delivered end-to-end Azure infrastructure for an AI-driven market research platform with Agentic AI and ML inferencing workloads. Designed the full secure cloud architecture — from GPU-enabled Kubernetes clusters to private networking and observability — enabling automated research workflows at production scale.</p>
+          <ul class="proj-pts">
+            <li>Delivered end-to-end Azure DevOps implementation using AKS and Azure Container Apps to host production-grade AI/ML microservices with auto-scaling capabilities.</li>
+            <li>Provisioned and managed GPU-enabled AKS node pools to support Agentic AI and ML model inferencing workloads — optimized for cost and GPU throughput.</li>
+            <li>Integrated Azure services: ACR, Key Vault, PostgreSQL Flexible Server, Data Factory, Event Grid, and Azure AI Foundry into a unified, secure AI platform architecture.</li>
+            <li>Designed secure networking using VPN integration, private subnets, API Gateway, Azure Front Door, and Kubernetes Ingress for controlled traffic flow.</li>
+            <li>Implemented Loki sidecar logging containers and Prometheus + Grafana dashboards for real-time cluster-level and application-level observability with alert rules.</li>
+            <li>Enforced cloud security best practices including private endpoints, least-privilege IAM, and network segmentation across all workloads.</li>
+          </ul>
+          <div class="impact"><span class="impact-lbl">Impact</span><span class="impact-txt">Enabled a secure, scalable production environment for Agentic AI workloads — supporting GPU-intensive ML inference pipelines with full observability and compliance controls.</span></div>
+        </div>
+      </div>
+    </div>
 
-  <details class="project-card">
-    <summary>Enterprise Financial Application (AWS)</summary>
-    <ul>
-      <li>Managed EC2-based Docker microservices and cluster deployments.</li>
-      <li>Built CI/CD pipelines using Jenkins and GitHub Actions.</li>
-      <li>Implemented event-driven workflows using AWS Lambda, EventBridge, and SNS.</li>
-      <li>Configured API Gateway, ELB, and NLB for traffic routing.</li>
-      <li>Managed AMIs, EBS volumes, snapshots, and backup strategies.</li>
-      <li>Performed OS upgrades, security patching, and vulnerability remediation.</li>
-      <li>Validated fixes using AWS CLI and security scan re-validation.</li>
-    </ul>
-    <p class="impact"><strong>Impact:</strong> Strengthened compliance without delays.</p>
-  </details>
+    <div class="proj-card rv" id="pc3">
+      <div class="proj-top" onclick="tog('pc3','pb3')">
+        <div class="proj-num">03</div>
+        <div class="proj-meta">
+          <h3>Mariner Finance — Enterprise Lending Platform</h3>
+          <div class="proj-sub">US-based consumer lending company · AWS · EC2 · ECS · Jenkins · GitHub Actions · Lambda</div>
+          <div class="proj-tags"><span class="ptag">AWS</span><span class="ptag">EC2 / ECS</span><span class="ptag">Lambda</span><span class="ptag">EventBridge</span><span class="ptag">Jenkins</span><span class="ptag">GitHub Actions</span></div>
+        </div>
+        <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="proj-body" id="pb3">
+        <div class="proj-inner">
+          <p class="proj-desc">Migrated, stabilized, and hardened a cloud-native microservices architecture on AWS for a US consumer lending company. Led DevSecOps remediation and compliance validation across the full platform, meeting US financial regulatory standards without compromising deployment velocity.</p>
+          <ul class="proj-pts">
+            <li>Managed EC2-based Docker microservices deployments and ECS cluster-based container orchestration for a high-availability enterprise financial platform.</li>
+            <li>Built CI/CD pipelines using Jenkins and GitHub Actions supporting automated testing, Snyk security scanning, and multi-environment deployments with gate approvals.</li>
+            <li>Implemented event-driven architecture using AWS Lambda, EventBridge, and SNS for asynchronous financial processing workflows including loan status updates.</li>
+            <li>Configured API Gateway, ELB, and NLB for intelligent traffic management, blue-green load balancing, and high availability across availability zones.</li>
+            <li>Managed AMI creation, EBS volumes, snapshots, and backup strategies to ensure business continuity and disaster recovery.</li>
+            <li>Executed OS upgrades, security patching, and DevSecOps vulnerability remediation — validated using AWS CLI and security scan re-validation workflows.</li>
+          </ul>
+          <div class="impact"><span class="impact-lbl">Impact</span><span class="impact-txt">Strengthened security posture and regulatory compliance for a US financial platform without introducing deployment delays — critical for a high-SLA lending operation.</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<!-- CAREER -->
-<section id="career">
-  <h2>Professional Experience</h2>
-
-  <div class="career-card">
-    <h4>DevOps / DevSecOps Engineer – Zuci Systems India Pvt. Ltd.</h4>
-    <span>Aug 2023 – Present</span>
-    <ul>
-      <li>Designed CI/CD pipelines across Azure and AWS.</li>
-      <li>Automated infrastructure provisioning using Terraform.</li>
-      <li>Implemented centralized monitoring and logging.</li>
-      <li>Led DevSecOps remediation and compliance validation.</li>
-    </ul>
-  </div>
-
-  <div class="career-card">
-    <h4>Intern – Java & Cloud</h4>
-    <span>Dec 2022 – Jul 2023</span>
-    <ul>
-      <li>Trained in Java fundamentals, Linux administration, and cloud basics.</li>
-      <li>Supported CI/CD and deployment activities.</li>
-    </ul>
+<!-- ══ EXPERIENCE ══ -->
+<section class="section" id="experience">
+  <div class="sec-tag">Career</div>
+  <h2 class="sec-title">Professional Experience</h2>
+  <div class="tl">
+    <div class="tl-item rv">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Aug 2023 — Present</div>
+      <div class="tl-role">DevOps / DevSecOps Engineer</div>
+      <div class="tl-co">Zuci Systems India Pvt. Ltd. · Chennai, India</div>
+      <ul class="tl-pts">
+        <li>Designed and maintained CI/CD pipelines using Jenkins (multi-server, multibranch) and GitHub Actions for multi-environment deployments across Azure and AWS.</li>
+        <li>Deployed and managed containerized microservices using Docker, Kubernetes (AKS), and Docker Swarm across IaaS, PaaS, and Kubernetes platforms for enterprise clients.</li>
+        <li>Automated cloud infrastructure provisioning using Terraform, standardizing repeatable deployment workflows and improving environment consistency.</li>
+        <li>Led DevSecOps remediation including vulnerability management (Snyk, Trivy, Grype), OS patching, configuration hardening, and compliance validation.</li>
+        <li>Implemented centralized monitoring using ELK Stack, Prometheus, Grafana, Loki, and Azure Application Insights across production workloads.</li>
+        <li>Supported and stabilized production releases ensuring security, high availability, and regulatory compliance requirements were consistently met.</li>
+      </ul>
+    </div>
+    <div class="tl-item rv">
+      <div class="tl-dot dim"></div>
+      <div class="tl-date">Dec 2022 — Jul 2023</div>
+      <div class="tl-role">Intern — Java &amp; Cloud</div>
+      <div class="tl-co">Zuci Systems India Pvt. Ltd. · Chennai, India</div>
+      <ul class="tl-pts">
+        <li>Completed hands-on training in Java fundamentals, Linux administration, and cloud computing basics.</li>
+        <li>Assisted DevOps teams with CI/CD task execution, application deployments, environment setup, and incident troubleshooting.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <h2>Certifications (Verified)</h2>
-
+<!-- ══ CERTIFICATIONS ══ -->
+<section class="section" id="certifications">
+  <div class="sec-tag">Credentials</div>
+  <h2 class="sec-title">Certifications</h2>
   <div class="cert-grid">
 
-    <!-- Terraform -->
-    <a
-      href="https://www.credly.com/badges/f79c40c8-d736-47e9-ba90-6f36fa3830cf"
-      target="_blank"
-      class="cert-card"
-    >
-      <img
-        src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg"
-        alt="Terraform Logo"
-        class="cert-logo"
-      />
-      <h4>Terraform Associate</h4>
-      <p class="issuer">HashiCorp</p>
-      <span class="verified">✔ Verified · View Credential ↗</span>
+    <a href="https://learn.microsoft.com/en-in/users/balajibalaraman-8723/credentials/643ad17970434bf8" target="_blank" class="cert-card ms rv">
+      <!-- Using your local az-400.jpg file -->
+      <img class="cert-badge-img" src="az-400.jpg" alt="AZ-400 Expert Badge"
+           onerror="this.src='';this.style.display='none'"/>
+      <div class="cert-issuer">Microsoft</div>
+      <div class="cert-name">Azure DevOps Engineer Expert</div>
+      <div class="cert-code">AZ-400</div>
+      <div class="cert-valid">Valid till Nov 2026</div>
+      <span class="cert-link">View Credential ↗</span>
     </a>
 
-    <!-- AZ-400 -->
-    <a
-      href="https://learn.microsoft.com/en-in/users/balajibalaraman-8723/credentials/643ad17970434bf8"
-      target="_blank"
-      class="cert-card"
-    >
-      <img
-        src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-expert-badge.svg"
-        alt="AZ-400 Badge"
-        class="cert-logo"
-      />
-      <h4>Azure DevOps Engineer Expert</h4>
-      <p class="issuer">Microsoft · AZ-400</p>
-      <span class="verified">✔ Verified · View Credential ↗</span>
+    <a href="https://www.credly.com/badges/f79c40c8-d736-47e9-ba90-6f36fa3830cf" target="_blank" class="cert-card hc rv">
+      <!-- Using your local terraform-003.png file -->
+      <img class="cert-badge-img" src="terraform-003.jpg" alt="Terraform Associate Badge"
+           onerror="this.src='';this.style.display='none'"/>
+      <div class="cert-issuer">HashiCorp</div>
+      <div class="cert-name">Terraform Associate (003)</div>
+      <div class="cert-code">HCTA-003</div>
+      <div class="cert-valid">Valid till Nov 2027</div>
+      <span class="cert-link">View Credential ↗</span>
     </a>
 
-    <!-- AZ-204 -->
-    <a
-      href="https://learn.microsoft.com/en-us/users/balajibalaraman-8723/credentials/4b7e3774bec7989b"
-      target="_blank"
-      class="cert-card"
-    >
-      <img
-        src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg"
-        alt="AZ-204 Badge"
-        class="cert-logo"
-      />
-      <h4>Azure Developer Associate</h4>
-      <p class="issuer">Microsoft · AZ-204</p>
-      <span class="verified">✔ Verified · View Credential ↗</span>
+    <a href="https://learn.microsoft.com/en-us/users/balajibalaraman-8723/credentials/4b7e3774bec7989b" target="_blank" class="cert-card ms rv">
+      <!-- Using your local az-204.png file -->
+      <img class="cert-badge-img" src="az-204.jpg" alt="AZ-204 Associate Badge"
+           onerror="this.src='';this.style.display='none'"/>
+      <div class="cert-issuer">Microsoft</div>
+      <div class="cert-name">Azure Developer Associate</div>
+      <div class="cert-code">AZ-204</div>
+      <div class="cert-valid">Valid till Mar 2026</div>
+      <span class="cert-link">View Credential ↗</span>
     </a>
 
   </div>
 </section>
 
-
-
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:balajiinfo2202@gmail.com">balajiinfo2202@gmail.com</a></p>
-  <p>Mobile: +91-6379742621</p>
-  <p>
-    LinkedIn:
-    <a href="https://linkedin.com/in/balaji-balaraman-devsecops" target="_blank">
-      linkedin.com/in/balaji-balaraman-devsecops
-    </a>
-  </p>
+<!-- ══ CONTACT ══ -->
+<section class="section" id="contact">
+  <div class="sec-tag">Connect</div>
+  <h2 class="sec-title">Get In Touch</h2>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-hl">Open to <span>Senior DevOps</span> &amp; <span>DevSecOps</span> roles</p>
+      <p class="contact-sub">Based in Chennai, India. Open to on-site, hybrid, or remote opportunities across India and globally. 3 Microsoft/HashiCorp certifications · Enterprise fintech &amp; AI platform experience.</p>
+      <div class="c-items">
+        <a href="mailto:balajiinfo2202@gmail.com" class="c-item">
+          <div class="c-icon">✉️</div>
+          <div><div class="c-type">Email</div><div class="c-val">balajiinfo2202@gmail.com</div></div>
+        </a>
+        <a href="tel:+916379742621" class="c-item">
+          <div class="c-icon">📞</div>
+          <div><div class="c-type">Phone</div><div class="c-val">+91 6379742621</div></div>
+        </a>
+        <a href="https://linkedin.com/in/balaji-balaraman-devsecops" target="_blank" class="c-item">
+          <div class="c-icon">💼</div>
+          <div><div class="c-type">LinkedIn</div><div class="c-val">linkedin.com/in/balaji-balaraman-devsecops</div></div>
+        </a>
+      </div>
+    </div>
+    <div class="avail-card">
+      <div class="avail-top">
+        <div class="dot-wrap"><div class="dot-ring"></div><div class="dot-core"></div></div>
+        <span class="avail-lbl">Available for Opportunities</span>
+      </div>
+      <div class="avail-title">Let's build something great together</div>
+      <p class="avail-body">3+ years delivering enterprise-grade DevOps and DevSecOps solutions for fintech and AI platforms. Certified in Azure DevOps, Terraform, and Azure development. Ready to bring reliability, security, and speed to your team.</p>
+      <div class="avail-tags">
+        <span class="avail-tag">Full-time</span>
+        <span class="avail-tag">Contract</span>
+        <span class="avail-tag">Remote OK</span>
+        <span class="avail-tag">Relocation Open</span>
+      </div>
+      <button class="btn btn-solid" onclick="document.getElementById('modal').classList.add('show')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
+      </button>
+    </div>
+  </div>
 </section>
 
-<footer>© 2025 Balaji Balaraman</footer>
+<!-- FOOTER -->
+<footer class="footer">
+  <span>© 2025 Balaji Balaraman · DevOps / DevSecOps Engineer</span>
+  <span>Chennai, India</span>
+</footer>
 
 <!-- RESUME MODAL -->
-<div id="resumeModal" class="modal">
-  <div class="modal-content">
-    <span id="closeResume" class="close">&times;</span>
-    <h3>Resume Preview</h3>
+<div class="modal-bg" id="modal">
+  <div class="modal-box">
+    <div class="modal-top">
+      <h4>Balaji Balaraman — Resume</h4>
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('show')">✕</button>
+    </div>
     <iframe src="Balaji_Balaraman_Resume.pdf"></iframe>
-    <a href="Balaji_Balaraman_Resume.pdf" download class="btn primary">Download Resume</a>
+    <div class="modal-ft">
+      <a href="Balaji_Balaraman_Resume.pdf" download class="btn btn-solid">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </a>
+    </div>
   </div>
 </div>
 
-<!-- SCRIPTS -->
 <script>
-  const toggleBtn = document.getElementById("themeToggle");
-  const body = document.body;
+/* scroll progress bar */
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+  document.getElementById('bar').style.width=p+'%';
+});
 
-  toggleBtn.onclick = () => {
-    body.classList.toggle("dark");
-    localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
-  };
+/* resume modal */
+document.getElementById('openResume').addEventListener('click',()=>document.getElementById('modal').classList.add('show'));
+document.getElementById('modal').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove('show')});
 
-  const modal = document.getElementById("resumeModal");
-  document.getElementById("openResume").onclick = () => modal.style.display = "block";
-  document.getElementById("closeResume").onclick = () => modal.style.display = "none";
-  window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+/* project accordion */
+function tog(cid,bid){
+  document.getElementById(cid).classList.toggle('open');
+  document.getElementById(bid).classList.toggle('open');
+}
+
+/* scroll reveal */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target)}
+  });
+},{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{
+  el.style.transitionDelay=(i%4)*0.06+'s';
+  observer.observe(el);
+});
 </script>
 </body>
 </html>
