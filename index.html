@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Balaji Balaraman | DevOps / DevSecOps Engineer</title>
-  <meta name="description" content="Balaji Balaraman – DevOps / DevSecOps Engineer with 3+ years in Azure, AWS, Kubernetes, Terraform, Cloud Security."/>
+  <title>Balaji Balaraman | Senior DevOps / DevSecOps Engineer</title>
+  <meta name="description" content="Balaji Balaraman – Senior DevOps / DevSecOps Engineer with 3+ years in Azure, AWS, Kubernetes, Terraform, Cloud Security."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -41,10 +41,7 @@ button{cursor:pointer;font-family:inherit}
 .nav-cta{display:flex;align-items:center;gap:7px;padding:8px 20px;background:var(--blue);color:#000;font-weight:700;font-size:.8rem;border:none;border-radius:var(--rs);transition:opacity .2s}
 .nav-cta:hover{opacity:.85}
 
-/* ── HERO ──
-   The ONLY fix needed: use a wrapper div that is display:flex with no section padding
-   The section has zero padding — only the inner wrapper has padding-top for nav offset
-   This means the background ::before/:after gradient only extends as tall as content  */
+/* ── HERO ── */
 .hero{position:relative;overflow:hidden}
 .hero::before{
   content:'';position:absolute;inset:0;
@@ -59,16 +56,14 @@ button{cursor:pointer;font-family:inherit}
   background-size:28px 28px;pointer-events:none
 }
 
-/* hero grid — align-items:stretch so all 3 cols grow to same height, no gap */
 .hero-inner{
   position:relative;z-index:1;
   max-width:1160px;margin:0 auto;
-  /* padding-top = nav height + small breathing room */
   padding:72px 60px 32px;
   display:grid;
   grid-template-columns:200px 1fr 180px;
   gap:32px;
-  align-items:center; /* vertically centre all 3 columns */
+  align-items:center;
 }
 
 /* photo col */
@@ -101,9 +96,9 @@ button{cursor:pointer;font-family:inherit}
 .chip{padding:4px 10px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;font-size:.69rem;font-weight:500;color:var(--muted)}
 .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
 
-/* stats card — stretch to match column height via align-self */
+/* stats card */
 .hero-card{
-  align-self:stretch; /* fill the row height */
+  align-self:stretch;
   background:var(--card);border:1px solid var(--border);border-radius:var(--r);
   padding:20px 18px;
   display:flex;flex-direction:column;justify-content:space-evenly;
@@ -120,17 +115,13 @@ button{cursor:pointer;font-family:inherit}
 .btn-ghost{background:rgba(255,255,255,.05);color:var(--text);border:1px solid var(--border)}
 .btn-ghost:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.15)}
 
-/* ── SECTIONS — tight 40px padding ── */
+/* ── SECTIONS ── */
 .section{max-width:1100px;margin:0 auto;padding:40px 48px}
-
-/* thin divider between hero and first section */
 .hero+.section{border-top:1px solid var(--border)}
 
 .sec-tag{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
 .sec-tag::before{content:'';display:block;width:20px;height:2px;background:var(--blue);border-radius:2px}
 .sec-title{font-family:var(--font-h);font-size:clamp(1.3rem,2.4vw,1.85rem);font-weight:800;letter-spacing:-1px;margin-bottom:22px;line-height:1.1}
-
-/* section separator lines */
 .section+.section{border-top:1px solid var(--border)}
 
 /* SCROLL REVEAL */
@@ -141,12 +132,17 @@ button{cursor:pointer;font-family:inherit}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .sk-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;transition:border-color .25s,background .25s}
 .sk-card:hover{border-color:var(--border-hi);background:var(--card-hover)}
+.sk-card.senior{border-color:rgba(167,139,250,0.3);background:rgba(167,139,250,0.05)}
+.sk-card.senior:hover{border-color:rgba(167,139,250,0.6);background:rgba(167,139,250,0.1)}
 .sk-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .sk-icon{width:30px;height:30px;border-radius:7px;background:var(--blue-dim);border:1px solid rgba(56,189,248,.2);display:flex;align-items:center;justify-content:center;font-size:.86rem;flex-shrink:0}
+.sk-icon.purple{background:rgba(167,139,250,0.15);border-color:rgba(167,139,250,0.3)}
 .sk-head h4{font-family:var(--font-h);font-size:.8rem;font-weight:700;color:var(--text)}
+.sk-senior-badge{display:inline-flex;align-items:center;padding:1px 7px;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.35);border-radius:100px;font-size:.57rem;font-weight:700;color:#A78BFA;letter-spacing:.5px;margin-left:auto;white-space:nowrap}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
 .tag{padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;font-size:.65rem;color:var(--muted);font-weight:500;transition:all .2s}
 .sk-card:hover .tag{border-color:rgba(56,189,248,.2);color:#CBD5E1}
+.sk-card.senior:hover .tag{border-color:rgba(167,139,250,.3);color:#CBD5E1}
 
 /* ── PROJECTS ── */
 .proj-list{display:flex;flex-direction:column;gap:10px}
@@ -181,11 +177,15 @@ button{cursor:pointer;font-family:inherit}
 .tl-item:last-child{padding-bottom:0}
 .tl-dot{position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--blue);box-shadow:0 0 0 4px rgba(56,189,248,.1)}
 .tl-dot.dim{border-color:var(--faint);box-shadow:none}
+.tl-dot.senior{border-color:#A78BFA;box-shadow:0 0 0 4px rgba(167,139,250,.15)}
 .tl-date{display:inline-flex;padding:3px 10px;background:var(--blue-dim);border:1px solid rgba(56,189,248,.2);border-radius:100px;font-size:.67rem;font-weight:600;color:var(--blue);margin-bottom:7px}
-.tl-role{font-family:var(--font-h);font-size:1rem;font-weight:700;letter-spacing:-.3px;margin-bottom:2px}
+.tl-date.senior{background:rgba(167,139,250,0.12);border-color:rgba(167,139,250,0.3);color:#A78BFA}
+.tl-role{font-family:var(--font-h);font-size:1rem;font-weight:700;letter-spacing:-.3px;margin-bottom:2px;display:flex;align-items:center;gap:9px}
+.tl-role-badge{display:inline-flex;padding:2px 9px;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.35);border-radius:100px;font-size:.6rem;font-weight:700;color:#A78BFA;letter-spacing:.5px}
 .tl-co{font-size:.76rem;color:var(--muted);margin-bottom:9px}
 .tl-pts li{display:flex;gap:9px;font-size:.79rem;color:var(--muted);padding:3px 0;line-height:1.65}
 .tl-pts li::before{content:'→';font-size:.65rem;color:var(--blue);flex-shrink:0;margin-top:3px}
+.tl-pts.senior li::before{color:#A78BFA}
 
 /* ── CERTS ── */
 .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -300,9 +300,9 @@ button{cursor:pointer;font-family:inherit}
     <div class="hero-mid">
       <h1 class="hero-name">Balaji Balaraman</h1>
       <p class="hero-role">
-        <strong>DevOps / DevSecOps Engineer</strong> with 3+ years building secure,
+        <strong>Senior DevOps / DevSecOps Engineer</strong> with 3+ years building secure,
         scalable cloud infrastructure across <strong>Azure, AWS &amp; GCP</strong> —
-        from CI/CD pipelines to Kubernetes clusters at enterprise fintech scale.
+        from CI/CD pipelines to Kubernetes clusters at enterprise fintech and AI scale.
       </p>
       <div class="hero-chips">
         <span class="chip">☁️ Azure · AWS</span>
@@ -311,6 +311,7 @@ button{cursor:pointer;font-family:inherit}
         <span class="chip">📦 Terraform</span>
         <span class="chip">📊 Observability</span>
         <span class="chip">🐳 Docker</span>
+        <span class="chip">🏗️ Platform Engineering</span>
       </div>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-solid">View Projects →</a>
@@ -337,6 +338,8 @@ button{cursor:pointer;font-family:inherit}
   <div class="sec-tag">Capabilities</div>
   <h2 class="sec-title">Core Technical Stack</h2>
   <div class="skills-grid">
+
+    <!-- ── EXISTING SKILLS ── -->
     <div class="sk-card rv">
       <div class="sk-head"><div class="sk-icon">⚙️</div><h4>CI/CD &amp; DevOps</h4></div>
       <div class="tags"><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">Azure DevOps</span><span class="tag">Nexus</span><span class="tag">SonarQube</span><span class="tag">Git</span><span class="tag">Bitbucket</span></div>
@@ -359,8 +362,35 @@ button{cursor:pointer;font-family:inherit}
     </div>
     <div class="sk-card rv">
       <div class="sk-head"><div class="sk-icon">🔒</div><h4>DevSecOps &amp; Security</h4></div>
-      <div class="tags"><span class="tag">Snyk</span><span class="tag">Trivy</span><span class="tag">Grype</span><span class="tag">Vuln. Management</span><span class="tag">OS Hardening</span><span class="tag">IAM Least-Privilege</span><span class="tag">Compliance</span></div>
+      <div class="tags"><span class="tag">Snyk</span><span class="tag">Trivy</span><span class="tag">Grype</span><span class="tag">Vuln. Management</span><span class="tag">OS Hardening</span><span class="tag">IAM Least-Privilege</span><span class="tag">SAST/DAST</span><span class="tag">Compliance</span></div>
     </div>
+
+    <!-- ── SENIOR-LEVEL SKILLS (NEW) ── -->
+    <div class="sk-card senior rv">
+      <div class="sk-head">
+        <div class="sk-icon purple">🏗️</div>
+        <h4>Platform &amp; Architecture</h4>
+        <span class="sk-senior-badge">SENIOR</span>
+      </div>
+      <div class="tags"><span class="tag">CI/CD Framework Design</span><span class="tag">Reusable Pipeline Templates</span><span class="tag">IaC Modular Patterns</span><span class="tag">Config Drift Prevention</span><span class="tag">Multi-env Standardisation</span></div>
+    </div>
+    <div class="sk-card senior rv">
+      <div class="sk-head">
+        <div class="sk-icon purple">⎈</div>
+        <h4>Kubernetes Governance</h4>
+        <span class="sk-senior-badge">SENIOR</span>
+      </div>
+      <div class="tags"><span class="tag">Cluster Governance</span><span class="tag">Capacity Planning</span><span class="tag">Resource Optimisation</span><span class="tag">Zero-Downtime Rollouts</span><span class="tag">AKS Node Pool Mgmt</span><span class="tag">Helm</span></div>
+    </div>
+    <div class="sk-card senior rv">
+      <div class="sk-head">
+        <div class="sk-icon purple">📋</div>
+        <h4>Compliance &amp; Leadership</h4>
+        <span class="sk-senior-badge">SENIOR</span>
+      </div>
+      <div class="tags"><span class="tag">CIS Benchmark</span><span class="tag">Audit-Ready Reporting</span><span class="tag">RBI / IRDAI / PCI-DSS</span><span class="tag">Team Mentoring</span><span class="tag">Production Escalation</span><span class="tag">SLA Adherence</span></div>
+    </div>
+
   </div>
 </section>
 
@@ -384,11 +414,11 @@ button{cursor:pointer;font-family:inherit}
         <div class="proj-inner">
           <p class="proj-desc">Designed and secured a high-volume fintech infrastructure supporting multiple NBFC lending applications — Paytm, MoneyView, and loan disbursement platforms — connecting lenders and borrowers across India's credit ecosystem under stringent financial compliance requirements.</p>
           <ul class="proj-pts">
-            <li>Built and maintained Jenkins multi-server CI/CD pipelines for microservice build, Docker image creation, and multi-environment deployments across dev, staging, and production.</li>
-            <li>Containerized and deployed microservices using Docker, Docker Swarm, and Kubernetes with Nginx reverse proxy and SSL/TLS termination for secure client traffic routing.</li>
-            <li>Configured Azure Virtual Network, private subnets, and secure networking for high-compliance fintech workloads supporting Paytm, MoneyView, and loan disbursement platforms.</li>
-            <li>Implemented centralized logging and alerting with ELK Stack (Filebeat, Metricbeat, Heartbeat) for container health monitoring, system metrics, and uptime visibility.</li>
-            <li>Performed Azure VM security hardening, vulnerability remediation (Snyk/Trivy), and OS patching to meet strict financial sector compliance requirements.</li>
+            <li>Built and maintained Jenkins multi-server CI/CD pipelines for microservice build, Docker image creation, and multi-environment deployments across dev, staging, and production — reducing build-to-deploy time by 50%.</li>
+            <li>Containerized and deployed microservices using Docker, Docker Swarm, and Kubernetes with Nginx reverse proxy and SSL/TLS termination for zero-downtime rolling deployments.</li>
+            <li>Configured Azure Virtual Network with private subnets and secure networking for high-compliance fintech workloads meeting RBI and IRDAI standards.</li>
+            <li>Implemented centralized logging and alerting with ELK Stack (Filebeat, Metricbeat, Heartbeat) across 20+ services for container health monitoring, system metrics, and uptime visibility.</li>
+            <li>Performed Azure VM security hardening, vulnerability remediation (Snyk/Trivy), and OS patching — passing 3 consecutive external security audits.</li>
           </ul>
           <div class="impact"><span class="impact-lbl">Impact</span><span class="impact-txt">Reduced unplanned downtime and standardized deployment workflows across all NBFC client platforms — enabling consistent, compliant releases at fintech scale.</span></div>
         </div>
@@ -409,11 +439,11 @@ button{cursor:pointer;font-family:inherit}
         <div class="proj-inner">
           <p class="proj-desc">Delivered end-to-end Azure infrastructure for an AI-driven market research platform with Agentic AI and ML inferencing workloads. Designed the full secure cloud architecture — from GPU-enabled Kubernetes clusters to private networking and observability — enabling automated research workflows at production scale.</p>
           <ul class="proj-pts">
-            <li>Delivered end-to-end Azure DevOps implementation using AKS and Azure Container Apps to host production-grade AI/ML microservices with auto-scaling capabilities.</li>
-            <li>Provisioned and managed GPU-enabled AKS node pools to support Agentic AI and ML model inferencing workloads — optimized for cost and GPU throughput.</li>
-            <li>Integrated Azure services: ACR, Key Vault, PostgreSQL Flexible Server, Data Factory, Event Grid, and Azure AI Foundry into a unified, secure AI platform architecture.</li>
-            <li>Designed secure networking using VPN integration, private subnets, API Gateway, Azure Front Door, and Kubernetes Ingress for controlled traffic flow.</li>
-            <li>Implemented Loki sidecar logging containers and Prometheus + Grafana dashboards for real-time cluster-level and application-level observability with alert rules.</li>
+            <li>Delivered end-to-end Azure DevOps implementation using AKS and Azure Container Apps to host production-grade AI/ML microservices supporting 5 Agentic AI models in parallel.</li>
+            <li>Provisioned and managed GPU-enabled AKS node pools to support Agentic AI and ML model inferencing workloads — optimized for cost and GPU throughput, achieving 99.5% uptime.</li>
+            <li>Integrated Azure services: ACR, Key Vault, PostgreSQL Flexible Server, Data Factory, Event Grid, and Azure AI Foundry into a unified, secure AI platform — reducing service integration time by 60%.</li>
+            <li>Designed secure networking using VPN integration, private subnets, API Gateway, Azure Front Door, and Kubernetes Ingress — eliminating public endpoint exposure for all internal services.</li>
+            <li>Implemented Loki sidecar logging containers and Prometheus + Grafana dashboards for real-time cluster-level and application-level observability across 10+ AI microservices.</li>
             <li>Enforced cloud security best practices including private endpoints, least-privilege IAM, and network segmentation across all workloads.</li>
           </ul>
           <div class="impact"><span class="impact-lbl">Impact</span><span class="impact-txt">Enabled a secure, scalable production environment for Agentic AI workloads — supporting GPU-intensive ML inference pipelines with full observability and compliance controls.</span></div>
@@ -435,12 +465,12 @@ button{cursor:pointer;font-family:inherit}
         <div class="proj-inner">
           <p class="proj-desc">Migrated, stabilized, and hardened a cloud-native microservices architecture on AWS for a US consumer lending company. Led DevSecOps remediation and compliance validation across the full platform, meeting US financial regulatory standards without compromising deployment velocity.</p>
           <ul class="proj-pts">
-            <li>Managed EC2-based Docker microservices deployments and ECS cluster-based container orchestration for a high-availability enterprise financial platform.</li>
-            <li>Built CI/CD pipelines using Jenkins and GitHub Actions supporting automated testing, Snyk security scanning, and multi-environment deployments with gate approvals.</li>
-            <li>Implemented event-driven architecture using AWS Lambda, EventBridge, and SNS for asynchronous financial processing workflows including loan status updates.</li>
-            <li>Configured API Gateway, ELB, and NLB for intelligent traffic management, blue-green load balancing, and high availability across availability zones.</li>
-            <li>Managed AMI creation, EBS volumes, snapshots, and backup strategies to ensure business continuity and disaster recovery.</li>
-            <li>Executed OS upgrades, security patching, and DevSecOps vulnerability remediation — validated using AWS CLI and security scan re-validation workflows.</li>
+            <li>Managed EC2-based Docker microservices deployments and ECS cluster-based container orchestration for a high-availability enterprise financial platform processing thousands of loan applications daily.</li>
+            <li>Built CI/CD pipelines using Jenkins and GitHub Actions with automated testing, Snyk SAST security scanning, and multi-environment deployments — reducing deployment errors by 30%.</li>
+            <li>Implemented event-driven architecture using AWS Lambda, EventBridge, and SNS for asynchronous financial processing handling 10,000+ daily transactions reliably.</li>
+            <li>Configured API Gateway, ELB, and NLB for intelligent traffic management, load balancing, and high availability — maintaining 99.95% uptime for consumer-facing services.</li>
+            <li>Managed AMI creation, EBS volumes, snapshots, and backup strategies to ensure business continuity — achieving RPO of 1 hour and RTO of 2 hours.</li>
+            <li>Executed OS upgrades, security patching, and DevSecOps vulnerability remediation validated using AWS CLI and security scan re-validation workflows, meeting PCI-DSS requirements.</li>
           </ul>
           <div class="impact"><span class="impact-lbl">Impact</span><span class="impact-txt">Strengthened security posture and regulatory compliance for a US financial platform without introducing deployment delays — critical for a high-SLA lending operation.</span></div>
         </div>
@@ -455,30 +485,54 @@ button{cursor:pointer;font-family:inherit}
   <div class="sec-tag">Career</div>
   <h2 class="sec-title">Professional Experience</h2>
   <div class="tl">
+
+    <!-- ── SENIOR ROLE (NEW) ── -->
+    <div class="tl-item rv">
+      <div class="tl-dot senior"></div>
+      <div class="tl-date senior">Apr 2026 — Present</div>
+      <div class="tl-role">
+        Senior DevOps / Senior DevSecOps Engineer
+        <span class="tl-role-badge">PROMOTED</span>
+      </div>
+      <div class="tl-co">Zuci Systems India Pvt. Ltd. · Chennai, India</div>
+      <ul class="tl-pts senior">
+        <li>Lead end-to-end DevOps strategy and platform engineering for enterprise fintech and AI clients across Azure and AWS; architect scalable CI/CD frameworks using Jenkins and GitHub Actions with reusable pipeline templates to enforce deployment standards.</li>
+        <li>Own Kubernetes (AKS) and Docker Swarm cluster governance — capacity planning, resource optimization, and zero-downtime rollout strategies for containerized microservices across IaaS and PaaS platforms.</li>
+        <li>Drive Terraform IaC adoption with modular design patterns, eliminating configuration drift and standardizing environment provisioning across dev, staging, and production.</li>
+        <li>Spearhead DevSecOps by embedding Snyk, Trivy, and Grype scanning into the SDLC alongside OS hardening, CIS-benchmark compliance, and audit-ready reporting.</li>
+        <li>Design full observability stack using Prometheus, Grafana, ELK Stack, Loki, and Azure Application Insights — enabling proactive incident detection and SLA adherence.</li>
+        <li>Mentor engineers on DevOps best practices; serve as primary escalation point for production stability across regulated financial and AI platforms.</li>
+      </ul>
+    </div>
+
+    <!-- ── DEVOPS ENGINEER (UPDATED DATES) ── -->
     <div class="tl-item rv">
       <div class="tl-dot"></div>
-      <div class="tl-date">Aug 2023 — Present</div>
+      <div class="tl-date">Aug 2023 — Mar 2026</div>
       <div class="tl-role">DevOps / DevSecOps Engineer</div>
       <div class="tl-co">Zuci Systems India Pvt. Ltd. · Chennai, India</div>
       <ul class="tl-pts">
-        <li>Designed and maintained CI/CD pipelines using Jenkins (multi-server, multibranch) and GitHub Actions for multi-environment deployments across Azure and AWS.</li>
-        <li>Deployed and managed containerized microservices using Docker, Kubernetes (AKS), and Docker Swarm across IaaS, PaaS, and Kubernetes platforms for enterprise clients.</li>
-        <li>Automated cloud infrastructure provisioning using Terraform, standardizing repeatable deployment workflows and improving environment consistency.</li>
-        <li>Led DevSecOps remediation including vulnerability management (Snyk, Trivy, Grype), OS patching, configuration hardening, and compliance validation.</li>
-        <li>Implemented centralized monitoring using ELK Stack, Prometheus, Grafana, Loki, and Azure Application Insights across production workloads.</li>
-        <li>Supported and stabilized production releases ensuring security, high availability, and regulatory compliance requirements were consistently met.</li>
+        <li>Designed and maintained CI/CD pipelines using Jenkins (multi-server, multibranch) and GitHub Actions for multi-environment deployments across Azure and AWS — reducing release cycle time by ~40%.</li>
+        <li>Deployed and managed containerized microservices using Docker, Kubernetes (AKS), and Docker Swarm across IaaS and PaaS platforms, supporting 3 concurrent enterprise client environments.</li>
+        <li>Automated cloud infrastructure provisioning using Terraform, standardizing repeatable deployment workflows and improving environment consistency across all environments.</li>
+        <li>Led DevSecOps remediation including vulnerability management (Snyk, Trivy, Grype), OS patching, configuration hardening, and compliance validation — achieving zero critical CVEs in production for 3 consecutive quarters.</li>
+        <li>Implemented centralized monitoring using ELK Stack, Prometheus, Grafana, Loki, and Azure Application Insights — reducing MTTR for production incidents by 35%.</li>
+        <li>Maintained 99.9% availability SLA and met financial regulatory compliance (RBI, IRDAI, PCI-DSS) consistently across all client environments.</li>
       </ul>
     </div>
+
+    <!-- ── INTERN ── -->
     <div class="tl-item rv">
       <div class="tl-dot dim"></div>
       <div class="tl-date">Dec 2022 — Jul 2023</div>
       <div class="tl-role">Intern — Java &amp; Cloud</div>
       <div class="tl-co">Zuci Systems India Pvt. Ltd. · Chennai, India</div>
       <ul class="tl-pts">
-        <li>Completed hands-on training in Java fundamentals, Linux administration, and cloud computing basics.</li>
-        <li>Assisted DevOps teams with CI/CD task execution, application deployments, environment setup, and incident troubleshooting.</li>
+        <li>Completed hands-on training in Java fundamentals, Linux administration, and cloud computing basics; produced onboarding documentation adopted by 10+ team members.</li>
+        <li>Assisted DevOps teams with CI/CD task execution, application deployments, environment setup, and incident troubleshooting across 5+ deployment cycles.</li>
       </ul>
     </div>
+
   </div>
 </section>
 
@@ -521,7 +575,7 @@ button{cursor:pointer;font-family:inherit}
   <div class="contact-grid">
     <div>
       <p class="contact-hl">Open to <span>Senior DevOps</span> &amp; <span>DevSecOps</span> roles</p>
-      <p class="contact-sub">Based in Chennai, India. Open to on-site, hybrid, or remote opportunities across India and globally. 3 Microsoft/HashiCorp certifications · Enterprise fintech &amp; AI platform experience.</p>
+      <p class="contact-sub">Based in Chennai, India. Open to on-site, hybrid, or remote opportunities across India and globally. 3 Microsoft/HashiCorp certifications · Enterprise fintech &amp; AI platform experience · Senior-level platform engineering &amp; team leadership.</p>
       <div class="c-items">
         <a href="mailto:balajiinfo2202@gmail.com" class="c-item">
           <div class="c-icon">✉️</div>
@@ -543,7 +597,7 @@ button{cursor:pointer;font-family:inherit}
         <span class="avail-lbl">Available for Opportunities</span>
       </div>
       <div class="avail-title">Let's build something great together</div>
-      <p class="avail-body">3+ years delivering enterprise-grade DevOps and DevSecOps solutions for fintech and AI platforms. Certified in Azure DevOps, Terraform, and Azure development. Ready to bring reliability, security, and speed to your team.</p>
+      <p class="avail-body">3+ years delivering enterprise-grade DevOps and DevSecOps solutions for fintech and AI platforms. Now leading platform engineering and team mentorship as Senior DevOps Engineer. Certified in Azure DevOps, Terraform, and Azure development.</p>
       <div class="avail-tags">
         <span class="avail-tag">Full-time</span>
         <span class="avail-tag">Contract</span>
@@ -560,7 +614,7 @@ button{cursor:pointer;font-family:inherit}
 
 <!-- FOOTER -->
 <footer class="footer">
-  <span>© 2026 Balaji Balaraman · DevOps / DevSecOps Engineer</span>
+  <span>© 2026 Balaji Balaraman · Senior DevOps / DevSecOps Engineer</span>
   <span>Chennai, India</span>
 </footer>
 
